@@ -1,8 +1,3 @@
-PATH
-  remote: ~/projects/auditing
-  specs:
-    auditing (1.1.2)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -35,6 +30,7 @@ GEM
     activesupport (3.0.1)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    auditing (1.1.3)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -74,6 +70,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  auditing!
+  auditing
   rails (= 3.0.1)
   sqlite3-ruby
