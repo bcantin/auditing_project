@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20101016131835) do
   create_table "people", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "middle_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

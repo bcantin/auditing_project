@@ -1,0 +1,29 @@
+<h2><%= @person.first_name %></h2>
+
+<%= link_to 'back' , people_path %> | 
+<%= link_to 'edit', edit_person_path(@person) %> | 
+<%= link_to 'audit log', audits_path('person', @person) %>
+
+<p>
+  First Name: <%= @person.first_name %><br/>
+  Middle Name: <%= @person.middle_name %><br/>
+  Last Name: <%= @person.last_name %><br/>
+</p>
+
+Phone Numbers:
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Extension</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @person.phone_numbers.each do |ph| %>
+      <tr>
+        <td><%= ph.number%></td>
+        <td><%= ph.extension%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   belongs_to :industry
-  has_many :phone_numbers, :as => :phoneable
+  has_many :phone_numbers, :as => :phoneable, :dependent => :destroy
   audit_enabled
   
   accepts_nested_attributes_for :phone_numbers,
@@ -8,5 +8,4 @@ class Company < ActiveRecord::Base
     :allow_destroy => true
     
 end
-rake rails:template LOCATION=http://github.com/lleger/Rails-3-jQuery/raw/master/jquery.rb
 

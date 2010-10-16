@@ -1,7 +1,6 @@
 class AuditsController < ApplicationController
 
   def index
-    # render :text => params.inspect
     resource  = params[:resource].classify.constantize
     @resource = resource.find(params[:id])
     @audits   = @resource.audits

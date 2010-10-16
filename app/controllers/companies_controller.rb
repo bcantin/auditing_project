@@ -39,8 +39,8 @@ class CompaniesController < ApplicationController
   end
   
   def destroy
-    # render :text => params.inspect
-    
-    @company = Company.find(params[:id])
+    Company.destroy(params[:id])
+    flash[:notice] = 'Company destroyed'
+    redirect_to companies_path
   end
 end

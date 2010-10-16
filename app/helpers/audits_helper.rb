@@ -14,23 +14,30 @@ module AuditsHelper
           "New: #{audit.new_value}"
         end
       else
-        # {:old_value  => get_has_many(old_value),
-        #  :new_value  => get_has_many(new_value)}
+        if audit.old_value
+          "Old: #{audit.old_value} <br/>" +
+          "New: #{audit.new_value}"
+        else
+          "New: #{audit.new_value}"
+        end
       end
     when 'added'
-      # {:old_value  => get_has_many(old_value),
-      #  :new_value  => get_has_many(new_value),
-      #  :field_name => association_type}
+      if audit.old_value
+        "Old: #{audit.old_value} <br/>" +
+        "New: #{audit.new_value}"
+      else
+        "New: #{audit.new_value}"
+      end
     when 'removed'
-      # {:field_name => association_type}
+      "Removed #{audit.association_type}"
     end
     
     str.html_safe
   end
 
-  def get_has_many(value)
+  def get_has_many(field, value)
     return nil unless value
-    "#{field_name} => #{value}"
+    "#{field} => #{value}"
   end
 
   ##

@@ -1,6 +1,7 @@
 AuditingProject::Application.routes.draw do
   
   resources :companies
+  resources :people
   
   match ':resource/:id/audits' => 'audits#index', :as => 'audits'
   match 'audit/rollback/:id'   => 'audits#rollback', :as => 'audit_rollback'

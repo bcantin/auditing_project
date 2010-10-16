@@ -1,13 +1,18 @@
-<%= form_for @company do |form| %>
+<%= form_for @person do |form| %>
   
   <p>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :first_name, 'First Name' %>
+    <%= form.text_field :first_name %>
   </p>
   
   <p>
-    <%= form.label :industry %>
-    <%= form.select :industry_id, Industry.all.collect {|i| [ i.name, i.id ] }, { :include_blank => true } %>
+    <%= form.label :middle_name, 'Middle Name' %>
+    <%= form.text_field :middle_name %>
+  </p>
+  
+  <p>
+    <%= form.label :last_name, 'Last Name' %>
+    <%= form.text_field :last_name %>
   </p>
   
   
@@ -21,6 +26,6 @@
   
   <p>
     <%= form.submit %> |
-    <%= link_to 'back', companies_path%>
+    <%= link_to 'back', people_path%>
   </p>
 <% end %>

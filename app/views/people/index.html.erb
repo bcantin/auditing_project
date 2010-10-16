@@ -1,0 +1,23 @@
+<h2>People</h2>
+
+<%= link_to 'Companies', companies_path %> | 
+<%= link_to 'New Person', new_person_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= link_to person.first_name, person %></td>
+        <td><%= person.middle_name %></td>
+        <td><%= person.last_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

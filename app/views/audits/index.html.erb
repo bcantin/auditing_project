@@ -24,7 +24,7 @@
           <%= time_ago_in_words(audit.created_at) %> ago
         </td>
         <td> 
-          <%= link_to 'rollback', '#' if audit.reversable? %>
+          <%= link_to 'rollback', audit_rollback_path(audit) if audit.reversable? %>
         </td>
       </tr>
     <% end %>
