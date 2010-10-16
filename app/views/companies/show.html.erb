@@ -1,8 +1,28 @@
 <h2><%= @company.name %></h2>
 
+<%= link_to 'back' , companies_path %> | 
 <%= link_to 'edit', edit_company_path(@company) %> | 
 <%= link_to 'audit log', audits_path('company', @company) %>
 
 <p>
   Industry: <%= @company.industry.name %>
 </p>
+
+Phone Numbers:
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Extension</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @company.phone_numbers.each do |ph| %>
+      <tr>
+        <td><%= ph.number%></td>
+        <td><%= ph.extension%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
