@@ -1,0 +1,16 @@
+<%= form_for @company do |form| %>
+  
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+    <%= form.label :industry %>
+    <%= form.select :industry_id, Industry.all.collect {|i| [ i.name, i.id ] }, { :include_blank => true } %>
+  </p>
+  
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

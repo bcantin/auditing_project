@@ -1,0 +1,20 @@
+<h2>Companies</h2>
+
+<%= link_to 'New Company', new_company_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Industry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= link_to company.name, company %></td>
+        <td><%= company.industry.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

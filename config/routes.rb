@@ -1,4 +1,12 @@
 AuditingProject::Application.routes.draw do
+  
+  resources :companies
+  
+  match ':resource/:id/audits' => 'audits#index', :as => 'audits'
+  match 'audit/rollback/:id'   => 'audits#rollback', :as => 'audit_rollback'
+
+  root :to => "companies#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+%w{Mining Farming Refining Construction Manufacturing}.each do |i|
+  Industry.create(:name => i)
+end
