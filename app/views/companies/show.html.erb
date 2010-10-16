@@ -25,4 +25,27 @@ Phone Numbers:
     <% end %>
   </tbody>
 </table>
-  
+
+Employments <%= link_to 'create', new_company_employment_path(@company) %>
+<table>
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @company.employments.each do |e| %>
+      <tr>
+        <td><%= e.person.to_label %></td>
+        <td><%= e.start_date.to_s %></td>
+        <td><%= e.end_date.to_s %></td>
+        <td>
+          <%= link_to 'edit', edit_company_employment_path(@company, e)%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

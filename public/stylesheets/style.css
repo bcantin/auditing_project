@@ -2,10 +2,46 @@ body {
   margin: 20px;
 }
 
+/* forms */
+.form_items {
+  margin-left: 17px;
+  text-align: left;
+}
+
+.form_items p {
+  margin: 20px 0px;
+}
+
+.form_items p span.instructions {
+  color: #aaa;
+}
+
+.form_items label {
+  color: #555;
+  width: 12em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+.form_items p.submit {
+  margin-left: 12.5em;
+}
+
+/* table */
 table {
+  margin: 10px 0px;
   border-collapse: collapse;
 }
 
 table, th, td {
   border: 1px solid black;
+  padding: 5px 10px;
 }
+table thead {
+  background: #ddd;
+}
+
+
+

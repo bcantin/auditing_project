@@ -7,8 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+  <p>
+    Quick Nav:
+    <%= link_to 'Companies', companies_path %> | 
+    <%= link_to 'People', people_path %>
+  </p>
+  
+  <%= yield %>
 
 </body>
 </html>

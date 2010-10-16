@@ -1,31 +1,35 @@
 <%= form_for @person do |form| %>
   
-  <p>
-    <%= form.label :first_name, 'First Name' %>
-    <%= form.text_field :first_name %>
-  </p>
+  <div class='form_items'>
   
-  <p>
-    <%= form.label :middle_name, 'Middle Name' %>
-    <%= form.text_field :middle_name %>
-  </p>
+    <p>
+      <%= form.label :first_name, 'First Name' %>
+      <%= form.text_field :first_name %>
+    </p>
   
-  <p>
-    <%= form.label :last_name, 'Last Name' %>
-    <%= form.text_field :last_name %>
-  </p>
+    <p>
+      <%= form.label :middle_name, 'Middle Name' %>
+      <%= form.text_field :middle_name %>
+    </p>
+  
+    <p>
+      <%= form.label :last_name, 'Last Name' %>
+      <%= form.text_field :last_name %>
+    </p>
   
   
-  <h3>Phone Numbers</h3>
-  <%= form.fields_for :phone_numbers do |phone_form| %>
-    <%= render :partial => 'partials/phone_number', :locals => { :f => phone_form } %>
-  <% end %>
+    <h3>Phone Numbers</h3>
+    <%= form.fields_for :phone_numbers do |phone_form| %>
+      <%= render :partial => 'partials/phone_number', :locals => { :f => phone_form } %>
+    <% end %>
   
-  <p><%= add_child_link "New Phone Number", :phone_numbers %></p>
-  <%= new_child_fields_template(form, :phone_numbers, :partial => 'partials/phone_number')%>
+    <p><%= add_child_link "New Phone Number", :phone_numbers %></p>
+    <%= new_child_fields_template(form, :phone_numbers, :partial => 'partials/phone_number')%>
   
-  <p>
-    <%= form.submit %> |
-    <%= link_to 'back', people_path%>
-  </p>
+    <p>
+      <%= form.submit %> |
+      <%= link_to 'back', people_path%>
+    </p>
+  
+  </div>
 <% end %>
