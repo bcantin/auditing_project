@@ -70,6 +70,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  auditing
+  auditing (~> 1)
   rails (= 3.0.1)
   sqlite3-ruby
