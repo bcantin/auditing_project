@@ -65,10 +65,14 @@ module AuditsHelper
 
   def get_belongs_to(audit, value)
     return nil unless value
-    klass = audit.field_name.gsub(/_id$/,'').capitalize.constantize
+    if audit.association
+      klass = audit.association.class.reflect_on_association(audit.field_name.gsub(/_id$/,'').to_sym).class_name.constantize
+    else
+      klass = audit.auditable.class.reflect_on_association(audit.field_name.gsub(/_id$/,'').to_sym).class_name.constantize
+    end
     value = klass.where(:id => value).first
     return 'Unknown' unless value
-    return value.to_label 
+    return value.to_label
   end
 
 end
