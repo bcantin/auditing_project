@@ -9,6 +9,7 @@ http://github.com/bcantin/auditing
   git clone git@github.com:bcantin/auditing_project.git
   cd auditing_project
   bundle install
+  rails g auditing:install
   rake db:migrate
   rake db:seed
   rails s
