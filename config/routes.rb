@@ -7,9 +7,6 @@ AuditingProject::Application.routes.draw do
   resources :people do
     resources :employments, :except => [:index, :show]
   end
-  
-  match ':resource/:id/audits' => 'audits#index', :as => 'audits'
-  match 'audit/rollback/:id'   => 'audits#rollback', :as => 'audit_rollback'
 
   root :to => "companies#index"
   
