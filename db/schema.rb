@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101016131835) do
+ActiveRecord::Schema.define(:version => 20110414174125) do
 
   create_table "audits", :force => true do |t|
     t.string   "action"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(:version => 20101016131835) do
     t.string   "association_type"
     t.integer  "association_id"
     t.string   "field_name"
-    t.string   "old_value"
-    t.string   "new_value"
-    t.boolean  "undoable",         :default => true
+    t.text     "old_value",        :limit => 255
+    t.text     "new_value",        :limit => 255
+    t.boolean  "undoable",                        :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20101016131835) do
     t.integer  "industry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
   create_table "employments", :force => true do |t|

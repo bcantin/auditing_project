@@ -7,6 +7,11 @@
     </p>
   
     <p>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </p>
+  
+    <p>
       <%= form.label :industry %>
       <%= form.select :industry_id, Industry.all.collect {|i| [ i.name, i.id ] }, { :include_blank => true } %>
     </p>
